@@ -1,0 +1,7 @@
+<p>
+  <% if !@err_response.blank? %>
+    <%= @err_response %>
+  <% else %>
+    <%= l(:label_success_tip) %>
+  <% end %>
+</p>

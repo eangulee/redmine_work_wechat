@@ -1,0 +1,96 @@
+# English strings go here for Rails i18n
+zh:
+  # my_label: "My label"
+  label_corp_wechat: 企业微信
+  label_dingtalk: 钉钉
+  label_dingtalk_login: 钉钉扫码登录
+  
+  menu_qy_wechats: 企业微信与钉钉
+  label_send_message: 发送消息
+  label_match_user: 匹配用户
+  label_edit_match_user: 编辑匹配用户
+  label_configure_qy_wechat: 配置企业微信
+  label_qy_wechat_remark: 企业微信应用备注 
+  label_qy_wechat_account_number: 企业微信账号
+  label_corpid: 企业ID
+  label_corp_name: 企业名称
+  label_application_secret: 应用Secret
+  label_app_name: 应用名称
+  label_application_agentid: 应用ID
+  label_qy_wechat_back: 返回企业微信
+  label_qy_wechat_application_back: 返回企业微信应用
+  label_qy_wecaht: 企业微信应用
+  label_new_qy_wecaht: 新建企业微信应用
+  label_edit_qy_wechat: 编辑企业微信引用
+  label_head_portrait: 头像
+  label_qy_wechat_party: 企业微信用户
+  
+  project_module_qy_wechat_users: 企业微信
+  permission_qy_wechat_users: 企业微信配置
+  permission_show_qy_wechat_users: 显示匹配用户
+  permission_new_qy_wechat_users: 匹配用户
+  permission_edit_qy_wechat_users: 编辑企业微信用户
+  permission_destroy_qy_wechat_users: 删除企业微信用户
+  
+  permission_qy_wechat: 企业微信应用配置
+  permission_show_qy_wechat: 显示企业微信应用
+  permission_new_qy_wechat: 新建企业微信应用
+  permission_edit_qy_wechat: 编辑企业微信应用
+  permission_destroy_qy_wechat: 删除企业微信应用
+  
+  user_qy_wechat_account_number: 企业微信账号
+  user_dingtalk_account_number: 钉钉UserID
+  user_dingtalk_dingid: 钉钉唯一ID
+  
+  field_operation: 操作
+  
+  msg_focus: 您关注的任务
+  msg_by: 已被
+  msg_created: 创建
+  msg_updated: 更新
+  
+  settings_wechat: 企业微信消息推送
+  settings_corp_name: 企业名称
+  settings_corp_id: 企业ID
+  settings_app_name: 应用名称
+  settings_app_id: 应用ID
+  settings_app_secret: 应用Secret
+  
+  
+  settings_dingtalk: 钉钉消息推送
+  settings_dt_corp_id: 企业ID（CorpId）
+  settings_dt_app_id: 应用ID（AgentID）
+  settings_dt_corp_secret: 企业Secret（CorpSecret）
+  settings_dt_app_key: 应用程序Key(appKey) #add
+  settings_dt_app_secret: 应用程序Secret(appSecret) #add
+  settings_dt_approval_dept_id: 审批部门ID
+  settings_dt_approval_flow_no: 审批流程码
+  settings_dt_approval_flow_enable: 启用审批
+  
+  settings_dingtalk_login: 钉钉扫码登录
+  settings_dt_login_appid: 钉钉登录应用ID（appid）
+  settings_dt_login_appsecret: 钉钉登录应用Secret（appsecret）
+  settings_dt_login_redirect: 钉钉登录应用回调地址（redirect url）
+  
+  label_dingtalk_flow_start: 发起钉钉审批
+  flash_dingtalk_setting_lack: 配置信息不全
+  flash_dingtalk_flow_wrong: 钉钉流程调用异常
+  flash_dingtalk_flow_start: 已经发起钉钉流程
+  
+  flash_dingtalk_bind: 您的钉钉账号还未绑定扫码，请尽快用redmine账户正常登陆，将自动绑定（等待时间长可能造成绑定失效）
+  flash_dingtalk_autologin_error: 您的钉钉账号未能自动登录成功，请联系管理员检查相关配置
+  
+  label_success_tip: 请在钉钉app中查看发起的流程
+  label_err_code: 错误码：
+  label_err_message: 错误信息：
+  label_err_code: 错误子码：
+  label_err_message: 错误详细信息：
+  lable_err_unknown: 未知的过程错误：可能是网络、服务调用接口、传递的配置信息不正确等造成
+  lable_err_setting_null: 钉钉的配置信息不全，需要在插件配置的钉钉信息推送栏目，填写全部所有的配置
+  lable_err_author_null: 发起人缺乏钉钉工号，请在账户里维护准确的钉钉工号
+  lable_err_assign_null: 指派人未指定或其钉钉工号为空，请指派并确保其有钉钉工号
+  
+  flow_issue_id: Issue号
+  flow_issue_name: 标题
+  flow_issue_desc: 内容
+  flow_project_name: 项目

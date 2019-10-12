@@ -1,0 +1,12 @@
+  <p>
+    <label><%= l(:settings_dt_login_appid) %></label>
+    <%= text_field_tag 'settings[dingtalk_login_appid]', @settings["dingtalk_login_appid"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_dt_login_appsecret) %></label>
+    <%= text_field_tag 'settings[dingtalk_login_appsecret]', @settings["dingtalk_login_appsecret"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_dt_login_redirect) %></label>
+    <%= text_field_tag 'settings[dingtalk_login_redirect]', @settings["dingtalk_login_redirect"], :size => 60 %>
+  </p>

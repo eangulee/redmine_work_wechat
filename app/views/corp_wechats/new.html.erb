@@ -1,0 +1,5 @@
+<h2><%= l(:label_new_qy_wecaht) %></h2>
+<%= labelled_form_for :corp_wechat, @corp_wechat, :url => {:action => 'create', :project_id => @project}, :html => { :multipart => true, :id => 'corp_wechat_form'} do |f|  %>
+  <%= render :partial => 'form', :locals => {:f => f}  %> 
+  <%= submit_tag l(:button_save) %>
+<% end -%>

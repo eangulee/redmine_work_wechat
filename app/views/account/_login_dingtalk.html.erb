@@ -1,0 +1,86 @@
+<!--控制代码，判断是否需要加载扫码-->
+<% begin %>
+<% appid = Setting["plugin_redmine_work_wechat"]["dingtalk_login_appid"] %>
+<% appsecret = Setting["plugin_redmine_work_wechat"]["dingtalk_login_appsecret"] %>
+<% redirect_url = Setting["plugin_redmine_work_wechat"]["dingtalk_login_redirect"] %>
+<% rescue %>
+  <% return %>
+<% end %>
+<% if appid.blank? || appsecret.blank? || redirect_url.blank? %>
+  <% return %>
+<% end %>
+
+<!--加入钉钉扫码js-->
+<script src="https://g.alicdn.com/dingding/dingtalk-jsapi/2.7.13/dingtalk.open.js"></script>
+<script src="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"></script>
+<!-- <script src="//g.alicdn.com/dingding/open-develop/1.6.9/dingtalk.js"></script> -->
+<div id="login_container" style="text-align:center;"></div>
+<% corpid = Setting["plugin_redmine_work_wechat"]["dingtalk_corp_id"] %>
+<% unless corpid.blank? %>
+<script>
+    var url = '<%= signin_url %>?auth_code=<%= corpid  %>&redirect_uri=' + '<%= redirect_url %>';
+    console.log("url", url);
+    console.log("platform", dd.env.platform);
+    if (dd.env.platform!=="notInDingTalk") {
+      dd.ready(function() {
+      	dd.runtime.permission.requestAuthCode({
+    		corpId: "<%= corpid  %>",
+  	    onSuccess: function(result) {
+  	    /*{
+  	        code: 'hYLK98jkf0m' //string authCode
+  	    }*/
+        console.log("code", result.code);
+        var authLoginUrl = '<%= signin_url %>?auth_code=' + result.code + '&redirect_uri=' + '<%= redirect_url %>';
+        <% unless params[:back_url].blank? %>
+          authLoginUrl = '<%= request.url %>&auth_code=' + result.code + '&redirect_uri=' + '<%= redirect_url %>';
+        <% end %>
+        console.log("authLoginUrl", authLoginUrl);
+        window.location.href=authLoginUrl 
+  	    },
+  	    onFail : function(err) {
+          dd.alert({content: JSON.stringify(err)});
+  	    }
+    	});
+    });
+	}
+
+    dd.error(function(error){
+       /**
+        {
+           errorMessage:"错误信息",// errorMessage 信息会展示出钉钉服务端生成签名使用的参数，请和您生成签名的参数作对比，找出错误的参数
+           errorCode: "错误码"
+        }
+       **/
+       alert('dd error: ' + JSON.stringify(error));
+});
+</script>
+<% end %>
+<% goto_url = "https://oapi.dingtalk.com/connect/oauth2/sns_authorize?appid=#{appid}&response_type=code&scope=snsapi_login&state=STATE&redirect_uri=#{redirect_url}" %>
+<% goto_url_encode = ERB::Util.url_encode(goto_url) %>
+
+<script>
+    var obj = DDLogin({
+     id:"login_container",//这里需要你在自己的页面定义一个HTML标签并设置id，例如<div id="login_container"></div>或<span id="login_container"></span>
+     goto: "<%= goto_url_encode %>",
+     style: "border:none;background-color:#FFFFFF;",
+     width : "365",
+     height: "400"
+    });
+    
+    var hanndleMessage = function (event) {
+        var origin = event.origin;
+        console.log("origin", event.origin);
+        if( origin == "https://login.dingtalk.com" ) { //判断是否来自ddLogin扫码事件。
+            var loginTmpCode = event.data; //拿到loginTmpCode后就可以在这里构造跳转链接进行跳转了
+            console.log("loginTmpCode", loginTmpCode);
+            window.location.href='https://oapi.dingtalk.com/connect/oauth2/sns_authorize?appid=<%= appid %>&response_type=code&scope=snsapi_login&state=STATE&redirect_uri=<%= redirect_url %>&loginTmpCode=' + loginTmpCode;
+        }       
+        
+    };
+    if (typeof window.addEventListener != 'undefined') {
+        window.addEventListener('message', hanndleMessage, false);
+    } else if (typeof window.attachEvent != 'undefined') {
+        window.attachEvent('onmessage', hanndleMessage);
+    }
+
+</script>

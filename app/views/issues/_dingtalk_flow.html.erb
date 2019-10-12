@@ -1,0 +1,25 @@
+<!--控制代码，判断是否需要加载-->
+<% begin %>
+<% flow_flag = '0' %>
+<% corpid = Setting["plugin_redmine_work_wechat"]["dingtalk_corp_id"] %>
+<% appkey = Setting["plugin_redmine_work_wechat"]["dingtalk_app_key"] %>
+<% appsecret = Setting["plugin_redmine_work_wechat"]["dingtalk_app_secret"] %>
+<% approval_dept_id = Setting["plugin_redmine_work_wechat"]["dingtalk_approval_dept_id"] %>
+<% appid = Setting["plugin_redmine_work_wechat"]["dingtalk_app_id"] %>
+<% approval_flow_no = Setting["plugin_redmine_work_wechat"]["dingtalk_approval_flow_no"] %>
+<% rescue %>
+  <% return %>
+<% end %>
+<% logger.info("dingtalk_flow-----------------------------") %>
+<% #logger.info(flow_flag) %>
+<% #logger.info(corpid) %>
+<% #ogger.info(appkey) %>
+<% #logger.info(appsecret) %>
+<% #logger.info(appid) %>
+<% #logger.info(approval_dept_id) %>
+<% #logger.info(approval_flow_no) %>
+<% if flow_flag == '0' || corpid.blank? || appkey.blank? || appsecret.blank? || appid.blank? || approval_dept_id.blank? || approval_flow_no.blank? %>
+  <% return %>
+<% end %>
+
+<%= link_to l(:label_dingtalk_flow_start), start_dingtalk_flow_path %>

@@ -1,0 +1,20 @@
+  <p>
+    <label><%= l(:settings_corp_name) %></label>
+    <%= text_field_tag 'settings[wechat_corp_name]', @settings["wechat_corp_name"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_corp_id) %></label>
+    <%= text_field_tag 'settings[wechat_corp_id]', @settings["wechat_corp_id"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_app_name) %></label>
+    <%= text_field_tag 'settings[wechat_app_name]', @settings["wechat_app_name"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_app_id) %></label>
+    <%= text_field_tag 'settings[wechat_app_id]', @settings["wechat_app_id"], :size => 60 %>
+  </p>
+  <p>
+    <label><%= l(:settings_app_secret) %></label>
+    <%= text_field_tag 'settings[wechat_app_secret]', @settings["wechat_app_secret"], :size => 60 %>
+  </p>

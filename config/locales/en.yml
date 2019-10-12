@@ -1,0 +1,95 @@
+# English strings go here for Rails i18n
+en:
+  # my_label: "My label"
+  label_corp_wechat: Corp_wechat
+  label_dingtalk: DingTalk
+  label_dingtalk_login: DingTalk Login
+
+  menu_qy_wechats: work wechat and dingtalk
+  label_send_message: send message
+  label_match_user: match user
+  label_edit_match_user: edit match user
+  label_configure_qy_wechat: configure work wechat
+  label_qy_wechat_remark: app remark
+  label_qy_wechat_account_number: work wechat account
+  label_corpid: corp ID
+  label_corp_name: corp name
+  label_application_secret: app Secret
+  label_app_name: app name
+  label_application_agentid: app ID
+  label_qy_wechat_back: back work wechat
+  label_qy_wechat_application_back: back app
+  label_qy_wecaht: work wechat app
+  label_new_qy_wecaht: new wechat app
+  label_edit_qy_wechat: edit wechat app
+  label_head_portrait: head portrait
+  label_qy_wechat_party: work wechat party
+  
+  project_module_qy_wechat_users: work wechat users
+  permission_qy_wechat_users: configure work wechat
+  permission_show_qy_wechat_users: show match users
+  permission_new_qy_wechat_users: match users
+  permission_edit_qy_wechat_users: edit work wechat users
+  permission_destroy_qy_wechat_users: delete work wechat user
+  
+  permission_qy_wechat: app configure
+  permission_show_qy_wechat: show work wechat app
+  permission_new_qy_wechat: new work wechat app
+  permission_edit_qy_wechat: edit work wechat app
+  permission_destroy_qy_wechat: delete work wechat app
+  
+  user_qy_wechat_account_number: work wechat account
+  user_dingtalk_account_number: dingtalk UserID
+  user_dingtalk_dingid: dintalk dingid
+  
+  field_operation: operation
+  
+  msg_focus: The task you tracked
+  msg_by: by
+  msg_created: created
+  msg_updated: updated
+  
+  settings_wechat: corp_wechat message pusing
+  settings_corp_name: corp name
+  settings_corp_id: corp id
+  settings_app_name: app name
+  settings_app_id: app id
+  settings_app_secret: app secret
+  
+  settings_dingtalk: dingtalk message pushing
+  settings_dt_corp_id: corp id(CorpId)
+  settings_dt_app_id: app id(AgentID)
+  settings_dt_corp_secret: corp secret(CorpSecret)  
+  settings_dt_app_key: App Key(appKey) #add
+  settings_dt_app_secret: App Secret(appSecret) #add
+  settings_dt_approval_dept_id: approval dept id
+  settings_dt_approval_flow_no: approval flow no
+  settings_dt_approval_flow_enable: approval enabled
+  
+  settings_dingtalk_login: dingtalk login setting
+  settings_dt_login_appid: dingtalk login appid(appid)
+  settings_dt_login_appsecret: dingtalk login appsecret(appsecret)
+  settings_dt_login_redirect: dingtalk login redirect(redirect url)
+  
+  label_dingtalk_flow_start: start dingtalk flow
+  flash_dingtalk_setting_lack: setting lack
+  flash_dingtalk_flow_wrong: Dingtalk called with wrong
+  flash_dingtalk_flow_start: dingtalk flow started
+  
+  flash_dingtalk_bind: your dingtalk account hasn't been bound. please login with redmine account then it will be auto-bound
+  flash_dingtalk_autologin_error: your pin account failed to log in successfully. please contact the administrator to check the configuration
+  
+  label_err_code: err code
+  label_err_message: err message
+  label_err_code: err_sub_code. err sub code
+  label_err_message: err_sub_message. err sub message
+  lable_err_unknown: error unknown. maybe network, service calling or settings invoking errors
+  lable_err_setting_null: dingtalk seeting lack. need to fill all these setting information in the plugin's setting page of dingtalk
+  lable_err_author_null: original's dingtalk id missed. please modify the accurate dingtalk id in the account
+  lable_err_assign_null: asign or their dingtalk id missed. please modify the accurate dingtalk id in the account
+  
+  # 英文也需要配置为中文
+  flow_issue_id: Issue号
+  flow_issue_name: 标题
+  flow_issue_desc: 内容
+  flow_project_name: 项目

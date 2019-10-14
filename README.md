@@ -1,4 +1,4 @@
-# README #
+﻿# README #
 ### 简介 ###
 
 This is a plugin for Wechat of work and Dingtalk which both are the biggest IM of work in China. Wechat of work is only oriented to medium-sized and small enterprises in China. Dingtalk only belongs to the cool Chinese companies. So we just introduce them in Chinese.
@@ -42,6 +42,7 @@ Both are competing against each other in China but they all benefit the Chinese 
 
 6、通过钉钉唯一id做扫描登录，扫码需要到https://open-dev.dingtalk.com的自助工具里，创建扫码登录应用授权，并注意填写回调地址为redmine的login地址。
 
+最新版本的第三方钉钉登录和消息推送流程已作了改变，最新的配置还需参考https://www.jianshu.com/p/ac7f02a273bd
 
 ### 企业微信消息插件安装指南 ###
 

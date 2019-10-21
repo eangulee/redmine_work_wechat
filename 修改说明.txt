@@ -1,0 +1,28 @@
+目前支持：
+1.钉钉扫码登录
+2.钉钉app内应用免登录
+3.工作消息推送
+
+审批流程没有测试，不清楚是否支持
+
+插件的安装：
+1、下载源码压缩包，展开到redmine的plugins目录下，保证有redmine_work_wechat目录，直接git clone 到plugins目录也可以。
+2、安装必要的gem类库，如果是生产环境，则建议带--without参数：
+bundle install --without development test
+3、执行数据迁移：
+rake redmine:plugins:migrate NAME=redmine_work_wechat RAILS_ENV=production
+4、重启redmine，进入管理菜单的企业微信与钉钉配置即可。
+
+配置修改：
+1.管理登录钉钉开放平台，创建企业内部开发--H5微应用；
+2.获取参数:应用ID(AgentID),应用程序Key(appKey),应用程序Secret(appSecret)，并填入到redmine插件配置项中；
+3.CorpId在钉钉开放平台的首页；
+4.创建移动应用--登录；
+5.获取参数:钉钉登录应用ID(appid),钉钉登录应用secret(appsecret)，并填入到redmine插件配置项中；
+6.填写钉钉登录应用回调地址(redirect url)，例如：http://www.redmineurl.com/login，配置了4，5，6项redmine登录界面可以看到扫描界面；
+7.钉钉中免登录需要在redmine的"我的账号"中配置"钉钉UserID"，钉钉UserID可以在钉钉管理后台的通讯录中的用户详情获取；
+8.扫描登录，redmine的"我的账号"中"钉钉唯一ID"，暂时没有很好的方式获取，推荐的做法是自动绑定，首先打开redmine的登录界面，打开钉钉的扫一扫，扫描二维码，然后授权，此时没有绑定"钉钉唯一ID"，还会停留在登录界面，但是登录界面的url已经改变了，此时用账号密码登录，登录成功就可以自动绑定，此步骤只需要执行一次，可以在"我的账号"-->"钉钉唯一ID"查看，如有值说明绑定成功，解绑的方式直接将字段置空，保存即可。
+
+注意：
+1.不支持windows平台下Bitnami Redmine；
+2.维护好H5微应用中的服务器出口IP，这里需要一个公网IP，不然无法实现钉钉app中应用免登录。
